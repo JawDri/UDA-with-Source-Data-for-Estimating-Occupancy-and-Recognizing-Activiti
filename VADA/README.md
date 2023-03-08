@@ -1,11 +1,14 @@
-HAFN Method
+VADA Method
 
-In HAFN.ipynb file run the cell for the specific task that you want to test (OE or AR, balanced or unbalanced). for AR, the number of instances selected for balanced and unbalanced datasets are written in the comments.
+In DIRT-T main.ipynb file run the cell for the specific task that you want to test (OE or AR, balanced or unbalanced) or wireless tasks. for AR and OE, the number of instances selected for balanced and unbalanced datasets are written in the comments.
 
-In SWD.ipynb file choose the rate of data poison (0%, 5% or 10%).
+In DIRT-T main.ipynb file choose the rate of data poison (0%, 5% or 10%).
 
-Change the number of features in net.py file (len(FEATURES) = 9 for OE and len(FEATURES), line 16.
+Change the feature name in dataset.py, line 18, 19, 26,27,69,70, to 'labels' for OE and Wireless, and 'activity' for AR.
 
-Change the task in train.py and eval.py (class_num) depending of the task that you want to test, example: ##number of classes##=3 in case of task with 3 labels.
+Change the feature number in dataset.py, line 53,58,85, to '9/32/912' depending of the task.
 
-TO TRAIN HAFN: !python train.py TO TEST HAFN: !python eval.py
+Change the n_feature in models.py, to '9/32/912' depending of the task.
+Change the line 103 argument in models.py, to 'n_features * 1 * x' depending of the task (x can be 8/2/228).
+
+TO TEST VADA: !python vada_train.py
